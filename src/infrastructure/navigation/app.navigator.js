@@ -18,20 +18,29 @@ const Tab = createStackNavigator();
 
 export const AppNavigator = () => (
   <NavigationContainer>
-    <Tab.Navigator
-      tabBarOptions={{
-        activeTintColor: "#72BAFC",
-        inactiveTintColor: "gray",
-        headerShown: false
-      }}
-      screenOptions={{
-        headerShown: false
-        }}
-    >
-      <Tab.Screen name="LaunchScreen" component={LaunchScreen} />
-      <Tab.Screen name="SignScreen" component={SignScreen} />
-      <Tab.Screen name="RegisterScreen" component={RegisterScreen} />
-      <Tab.Screen name="SignInScreen" component={SignInScreen} />
+    <Tab.Navigator>
+      <Tab.Screen name="LaunchScreen" component={LaunchScreen} options={{ headerShown: false }} />
+      <Tab.Screen name="SignScreen" component={SignScreen} options={{ headerShown: false }} />
+      <Tab.Screen name="RegisterScreen" component={RegisterScreen} options={{
+        title: 'Register', headerStyle: {
+          backgroundColor: '#ff0066',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+        headerTitleAlign: "center"
+      }}/>
+      <Tab.Screen name="SignInScreen" component={SignInScreen} options={{
+        title: 'Sign In', headerStyle: {
+          backgroundColor: '#ff0066',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+        headerTitleAlign: "center"
+      }} />
     </Tab.Navigator>
   </NavigationContainer>
 );
